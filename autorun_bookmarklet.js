@@ -1,8 +1,9 @@
 function btnclickevent(btnnum){
 	var btnRun_timer;
-	function autobtnclick(){
+	function autobtnclick(btn){
 		strstmn = document.getElementById('staminaCnt').innerHTML;
 		intstmn = strstmn.split("/");
+		btn.click();
 		if(intstmn[0] < 6){
 			var btnHerfbar = document.getElementById('staminaItem_24');
 			btnHerfbar.click();
@@ -13,7 +14,7 @@ function btnclickevent(btnnum){
 	if(btnnum == 1){
 		(function(){
 			var btnRun = document.getElementById('btnFight');
-			btnRun_timer = setInterval(autobtnclick(), 1000);
+			btnRun_timer = setInterval(autobtnclick(btnRun), 1000);
 		})();
 	}else{
 		(function(){

@@ -1,16 +1,5 @@
 (function(window,undefined){
 	var btnRun_timer;
-	var amb = document.getElementById('ambHeader');
-	var btnRunNode = document.createElement('button');
-	btnRunNode.setAttribute('type', 'button');
-	btnRunNode.setAttribute('onclick', 'autorun()');
-	btnRunNode.setAttribute('value', 'AutoRun');
-	var btnRunStopNode = document.createElement('button');
-	btnRunStopNode.setAttribute('type', 'button');
-	btnRunStopNode.setAttribute('onclick', 'autorun()');
-	btnRunStopNode.setAttribute('value', 'StopRun');
-	amb.appendChild(btnRunNode);
-	amb.appendChild(btnRunStopNode);
 
 	function autorun(){
 		var btnRun = document.getElementById('btnFight');
@@ -31,4 +20,17 @@
 	function stopautorun(){
 		clearInterval(btnRun_timer);
 	}
+	var amb = document.getElementById('ambHeader');
+	var btnRunNode = document.createElement('button');
+	btnRunNode.setAttribute('type', 'button');
+	btnRunNode.setAttribute('onclick', 'autorun()');
+	var textNode1 = document.createTextNode('AutoRun');
+	var btnRunStopNode = document.createElement('button');
+	btnRunStopNode.setAttribute('type', 'button');
+	btnRunStopNode.setAttribute('onclick', 'stopautorun()');
+	var textNode2 = document.createTextNode('StopRun');
+	btnRunNode.appendChild(textNode1);
+	btnRunStopNode.appendChild(textNode2);
+	amb.appendChild(btnRunNode);
+	amb.appendChild(btnRunStopNode);
 })(window);

@@ -1,3 +1,12 @@
+function Sleep(ms) {
+    var d1 = new Date().getTime();
+    var d2 = new Date().getTime();
+    while( d2 < (d1 + ms) ) {
+        d2 = new Date().getTime();
+    }
+    return;
+}
+
 function btnclickevent(btnnum){
 	var btnRun_timer;
 	function autobtnclick(btn){
@@ -5,6 +14,7 @@ function btnclickevent(btnnum){
 		intstmn = strstmn.split("/");
 		btn.click();
 		if(intstmn[0] < 6){
+			Sleep(500);
 			var btnHerfbar = document.getElementById('staminaItem_24');
 			btnHerfbar.click();
 			var btnOk = document.getElementById('confirmPopOkBtn');

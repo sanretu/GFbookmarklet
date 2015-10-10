@@ -11,9 +11,14 @@ function btnclickevent(btnnum){
 		}
 	}
 	if(btnnum == 1){
-		(function(){var btnRun = document.getElementById('btnFight');btnRun_timer = setInterval(autobtnclick(), 1000);})()
+		(function(){
+			var btnRun = document.getElementById('btnFight');
+			btnRun_timer = setInterval(autobtnclick(), 1000);
+		})();
 	}else{
-		(function(){clearInterval(btnRun_timer);})()
+		(function(){
+			clearInterval(btnRun_timer);
+		})();
 	}
 }
 

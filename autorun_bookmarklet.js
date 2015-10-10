@@ -1,11 +1,6 @@
 (function(window,undefined){
 	var btnRun_timer;
 
-	function autorun(){
-		var btnRun = document.getElementById('btnFight');
-		btnRun_timer = setInterval(autobtnclick(), 1000);
-	}
-
 	function autobtnclick(){
 		strstmn = document.getElementById('staminaCnt').innerHTML;
 		intstmn = strstmn.split("/");
@@ -17,17 +12,15 @@
 		}
 	}
 
-	function stopautorun(){
-		clearInterval(btnRun_timer);
-	}
 	var amb = document.getElementById('ambHeader');
 	var btnRunNode = document.createElement('button');
 	btnRunNode.setAttribute('type', 'button');
-	btnRunNode.setAttribute('onclick', 'autorun()');
+	btnRunNode.setAttribute('onclick', '(function(){var btnRun = document.getElementById('btnFight');btnRun_timer = setInterval(autobtnclick(), 1000);
+	})()');
 	var textNode1 = document.createTextNode('AutoRun');
 	var btnRunStopNode = document.createElement('button');
 	btnRunStopNode.setAttribute('type', 'button');
-	btnRunStopNode.setAttribute('onclick', 'stopautorun()');
+	btnRunStopNode.setAttribute('onclick', '(function(){clearInterval(btnRun_timer);})()');
 	var textNode2 = document.createTextNode('StopRun');
 	btnRunNode.appendChild(textNode1);
 	btnRunStopNode.appendChild(textNode2);

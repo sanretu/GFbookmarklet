@@ -10,27 +10,27 @@ function Sleep(ms) {
 function btnclickevent(btnnum){
 	var btnRun_timer;
 	function autobtnclick(btn){
+		if(btnnum != 1){
+			(function(){
+				clearInterval(btnRun_timer);
+			})();
+		}
 		strstmn = document.getElementById('staminaCnt').innerHTML;
 		intstmn = strstmn.split("/");
 		btn.click();
 		if(intstmn[0] < 6){
-			Sleep(500);
+			Sleep(1000);
 			var btnHerfbar = document.getElementById('staminaItem_24');
 			btnHerfbar.click();
 			var btnOk = document.getElementById('confirmPopOkBtn');
 			btnOk.click();
+			Sleep(1000);
 		}
 	}
-	if(btnnum == 1){
-		(function(){
-			var btnRun = document.getElementById('btnFight');
-			btnRun_timer = setInterval(function(){autobtnclick(btnRun)}, 1000);
-		})();
-	}else{
-		(function(){
-			clearInterval(btnRun_timer);
-		})();
-	}
+	(function(){
+		var btnRun = document.getElementById('btnFight');
+		btnRun_timer = setInterval(function(){autobtnclick(btnRun)}, 1000);
+	})();
 }
 
 (function(window,undefined){

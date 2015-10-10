@@ -14,7 +14,7 @@ function btnclickevent(btnnum){
 	if(btnnum == 1){
 		(function(){
 			var btnRun = document.getElementById('btnFight');
-			btnRun_timer = setInterval(autobtnclick(btnRun), 1000);
+			btnRun_timer = setInterval(function(){autobtnclick(btnRun)}, 1000);
 		})();
 	}else{
 		(function(){

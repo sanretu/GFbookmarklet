@@ -1,10 +1,25 @@
+var d1, d2
+
 function Sleep(ms) {
-    var d1 = new Date().getTime();
-    var d2 = new Date().getTime();
+    d1 = new Date().getTime();
+    d2 = new Date().getTime();
     while( d2 < (d1 + ms) ) {
         d2 = new Date().getTime();
     }
     return;
+}
+
+function URLdetermine(url){
+	(function(url){
+		
+	})(url);
+	switch(url){
+	case :
+		break;
+	case :
+		break;
+			
+	}
 }
 
 function btnclickevent(btnnum){
